@@ -10,7 +10,7 @@ With the help of the Showcase Template you can make your front page display an i
 
 You can read more about Duster and how to setup the Showcase Template here:
 
-http://theme.wordpress.com/themes/duster/
+http://theme.wordpress.com/themes/babystore/
 
 == Changelog ==
 

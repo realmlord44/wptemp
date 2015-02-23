@@ -11,10 +11,10 @@ get_header(); ?>
 	<?php if ( have_posts() ) : ?>
 
 		<header class="page-header">
-			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'duster' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'babystore' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 		</header>
 
-		<?php duster_content_nav( 'nav-above' ); ?>
+		<?php babystore_content_nav( 'nav-above' ); ?>
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -23,17 +23,17 @@ get_header(); ?>
 
 		<?php endwhile; ?>
 
-		<?php duster_content_nav( 'nav-below' ); ?>
+		<?php babystore_content_nav( 'nav-below' ); ?>
 
 	<?php else : ?>
 
 		<article id="post-0" class="post no-results not-found">
 			<header class="entry-header">
-				<h1 class="entry-title"><?php _e( 'Nothing Found', 'duster' ); ?></h1>
+				<h1 class="entry-title"><?php _e( 'Nothing Found', 'babystore' ); ?></h1>
 			</header><!-- .entry-header -->
 
 			<div class="entry-content">
-				<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'duster' ); ?></p>
+				<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'babystore' ); ?></p>
 				<?php get_search_form(); ?>
 			</div><!-- .entry-content -->
 		</article><!-- #post-0 -->

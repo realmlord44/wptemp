@@ -30,8 +30,8 @@
 				<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</hgroup>
 <nav id="access" role="navigation">
-				<h1 class="section-heading"><?php _e( 'Main menu', 'duster' ); ?></h1>
-				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'duster' ); ?>"><?php _e( 'Skip to content', 'duster' ); ?></a></div>
+				<h1 class="section-heading"><?php _e( 'Main menu', 'babystore' ); ?></h1>
+				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'babystore' ); ?>"><?php _e( 'Skip to content', 'babystore' ); ?></a></div>
 
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #access -->

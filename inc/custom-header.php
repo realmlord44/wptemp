@@ -26,24 +26,24 @@
  *
  * @todo Rework this function to remove WordPress 3.4 support when WordPress 3.6 is released.
  *
- * @uses duster_header_style()
- * @uses duster_admin_header_style()
- * @uses duster_admin_header_image()
+ * @uses babystore_header_style()
+ * @uses babystore_admin_header_style()
+ * @uses babystore_admin_header_image()
  *
  * @package Duster
  */
-function duster_custom_header_setup() {
+function babystore_custom_header_setup() {
 	$args = array(
 		'default-image'          => '%s/images/headers/default.jpg',
 		'default-text-color'     => '000',
-		'width'                  => apply_filters( 'duster_header_image_width', 1000 ),
-		'height'                 => apply_filters( 'duster_header_image_height', 300 ),
-		'wp-head-callback'       => 'duster_header_style',
-		'admin-head-callback'    => 'duster_admin_header_style',
-		'admin-preview-callback' => 'duster_admin_header_image',
+		'width'                  => apply_filters( 'babystore_header_image_width', 1000 ),
+		'height'                 => apply_filters( 'babystore_header_image_height', 300 ),
+		'wp-head-callback'       => 'babystore_header_style',
+		'admin-head-callback'    => 'babystore_admin_header_style',
+		'admin-preview-callback' => 'babystore_admin_header_image',
 	);
 
-	$args = apply_filters( 'duster_custom_header_args', $args );
+	$args = apply_filters( 'babystore_custom_header_args', $args );
 
 	if ( function_exists( 'wp_get_theme' ) ) {
 		add_theme_support( 'custom-header', $args );
@@ -56,7 +56,7 @@ function duster_custom_header_setup() {
 		add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
 	}
 }
-add_action( 'after_setup_theme', 'duster_custom_header_setup' );
+add_action( 'after_setup_theme', 'babystore_custom_header_setup' );
 
 /**
  * Shiv for get_custom_header().
@@ -83,13 +83,13 @@ if ( ! function_exists( 'get_custom_header' ) ) {
 	}
 }
 
-if ( ! function_exists( 'duster_header_style' ) ) :
+if ( ! function_exists( 'babystore_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see duster_custom_header_setup().
+ * @see babystore_custom_header_setup().
  */
-function duster_header_style() {
+function babystore_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -122,15 +122,15 @@ function duster_header_style() {
 	</style>
 	<?php
 }
-endif; // duster_header_style
+endif; // babystore_header_style
 
-if ( ! function_exists( 'duster_admin_header_style' ) ) :
+if ( ! function_exists( 'babystore_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see duster_custom_header_setup().
+ * @see babystore_custom_header_setup().
  */
-function duster_admin_header_style() {
+function babystore_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
@@ -170,15 +170,15 @@ function duster_admin_header_style() {
 	</style>
 <?php
 }
-endif; // duster_admin_header_style
+endif; // babystore_admin_header_style
 
-if ( ! function_exists( 'duster_admin_header_image' ) ) :
+if ( ! function_exists( 'babystore_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see duster_custom_header_setup().
+ * @see babystore_custom_header_setup().
  */
-function duster_admin_header_image() {
+function babystore_admin_header_image() {
 	$style        = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 	$header_image = get_header_image();
 ?>
@@ -191,4 +191,4 @@ function duster_admin_header_image() {
 	</div>
 <?php
 }
-endif; // duster_admin_header_image
+endif; // babystore_admin_header_image

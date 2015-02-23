@@ -12,9 +12,9 @@ class Duster_Ephemera_Widget extends WP_Widget {
 	 * @return void
 	 **/
 	function Duster_Ephemera_Widget() {
-		$widget_ops = array( 'classname' => 'widget_duster_ephemera', 'description' => __( 'Use this widget to list your recent Aside, Status, Quote, and Link posts', 'duster' ) );
-		$this->WP_Widget( 'widget_duster_ephemera', __( 'Duster Ephemera', 'duster' ), $widget_ops );
-		$this->alt_option_name = 'widget_duster_ephemera';
+		$widget_ops = array( 'classname' => 'widget_babystore_ephemera', 'description' => __( 'Use this widget to list your recent Aside, Status, Quote, and Link posts', 'babystore' ) );
+		$this->WP_Widget( 'widget_babystore_ephemera', __( 'Duster Ephemera', 'babystore' ), $widget_ops );
+		$this->alt_option_name = 'widget_babystore_ephemera';
 
 		add_action( 'save_post', array(&$this, 'flush_widget_cache' ) );
 		add_action( 'deleted_post', array(&$this, 'flush_widget_cache' ) );
@@ -30,7 +30,7 @@ class Duster_Ephemera_Widget extends WP_Widget {
 	 * @return void Echoes it's output
 	 **/
 	function widget( $args, $instance ) {
-		$cache = wp_cache_get( 'widget_duster_ephemera', 'widget' );
+		$cache = wp_cache_get( 'widget_babystore_ephemera', 'widget' );
 
 		if ( !is_array($cache) )
 			$cache = array();
@@ -46,7 +46,7 @@ class Duster_Ephemera_Widget extends WP_Widget {
 		ob_start();
 		extract( $args, EXTR_SKIP );
 
-		$title = apply_filters( 'widget_title', empty($instance['title']) ? __( 'Ephemera', 'duster' ) : $instance['title'], $instance, $this->id_base);
+		$title = apply_filters( 'widget_title', empty($instance['title']) ? __( 'Ephemera', 'babystore' ) : $instance['title'], $instance, $this->id_base);
 
 		if ( ! isset( $instance['number'] ) )
 			$instance['number'] = '10';
@@ -88,9 +88,9 @@ class Duster_Ephemera_Widget extends WP_Widget {
 			<?php if ( 'link' != get_post_format( $post->ID ) ) : ?>
 
 			<li class="entry-title">
-				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'duster' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'babystore' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 				<span class="comments-link">
-					<?php comments_popup_link( __( '0 <span class="reply">comments &rarr;</span>', 'duster' ), __( '1 <span class="reply">comment &rarr;</span>', 'duster' ), __( '% <span class="reply">comments &rarr;</span>', 'duster' ) ); ?>
+					<?php comments_popup_link( __( '0 <span class="reply">comments &rarr;</span>', 'babystore' ), __( '1 <span class="reply">comment &rarr;</span>', 'babystore' ), __( '% <span class="reply">comments &rarr;</span>', 'babystore' ) ); ?>
 				</span>
 			</li>
 
@@ -100,12 +100,12 @@ class Duster_Ephemera_Widget extends WP_Widget {
 				<?php
 					$link_url = get_permalink();
 
-					if ( false != duster_url_grabber() )
-						$link_url = duster_url_grabber();
+					if ( false != babystore_url_grabber() )
+						$link_url = babystore_url_grabber();
 				?>
-				<a href="<?php echo $link_url; ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'duster' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?>&nbsp;<span>&rarr;</span></a>
+				<a href="<?php echo $link_url; ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'babystore' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?>&nbsp;<span>&rarr;</span></a>
 				<span class="comments-link">
-					<?php comments_popup_link( __( '0 <span class="reply">comments &rarr;</span>', 'duster' ), __( '1 <span class="reply">comment &rarr;</span>', 'duster' ), __( '% <span class="reply">comments &rarr;</span>', 'duster' ) ); ?>
+					<?php comments_popup_link( __( '0 <span class="reply">comments &rarr;</span>', 'babystore' ), __( '1 <span class="reply">comment &rarr;</span>', 'babystore' ), __( '% <span class="reply">comments &rarr;</span>', 'babystore' ) ); ?>
 				</span>
 			</li>
 
@@ -124,7 +124,7 @@ class Duster_Ephemera_Widget extends WP_Widget {
 		endif;
 
 		$cache[$args['widget_id']] = ob_get_flush();
-		wp_cache_set( 'widget_duster_ephemera', $cache, 'widget' );
+		wp_cache_set( 'widget_babystore_ephemera', $cache, 'widget' );
 	}
 
 	/**
@@ -138,14 +138,14 @@ class Duster_Ephemera_Widget extends WP_Widget {
 		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
-		if ( isset($alloptions['widget_duster_ephemera']) )
-			delete_option( 'widget_duster_ephemera' );
+		if ( isset($alloptions['widget_babystore_ephemera']) )
+			delete_option( 'widget_babystore_ephemera' );
 
 		return $instance;
 	}
 
 	function flush_widget_cache() {
-		wp_cache_delete( 'widget_duster_ephemera', 'widget' );
+		wp_cache_delete( 'widget_babystore_ephemera', 'widget' );
 	}
 
 	/**
@@ -155,10 +155,10 @@ class Duster_Ephemera_Widget extends WP_Widget {
 				$title = isset($instance['title']) ? esc_attr($instance['title']) : '';
 				$number = isset($instance['number']) ? absint($instance['number']) : 10;
 		?>
-				<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'duster' ); ?></label>
+				<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'babystore' ); ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
-				<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'duster' ); ?></label>
+				<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'babystore' ); ?></label>
 				<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
 		<?php
 	}

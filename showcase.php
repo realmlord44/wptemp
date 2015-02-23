@@ -61,14 +61,14 @@ get_header(); ?>
 		<?php else : ?>
 		<section class="featured-post">
 		<?php endif; ?>
-			<h1 class="showcase-heading"><?php _e( 'Featured Post', 'duster' ); ?></h1>
+			<h1 class="showcase-heading"><?php _e( 'Featured Post', 'babystore' ); ?></h1>
 			<?php
 				// Dynamic thumbnails!
 				if ( has_post_thumbnail() ) {
 					if ( $image[1] >= HEADER_IMAGE_WIDTH ) { ?>
-						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'duster' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"> <?php the_post_thumbnail( 'large-feature' ); ?></a>
+						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'babystore' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"> <?php the_post_thumbnail( 'large-feature' ); ?></a>
 					<?php } else { ?>
-						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'duster' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_post_thumbnail( 'small-feature' ); ?></a>
+						<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'babystore' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_post_thumbnail( 'small-feature' ); ?></a>
 					<?php }
 				}
 			?>
@@ -77,7 +77,7 @@ get_header(); ?>
 		<?php endif; ?>
 
 		<section class="recent-posts">
-			<h1 class="showcase-heading"><?php _e( 'Recent Posts', 'duster' ); ?></h1>
+			<h1 class="showcase-heading"><?php _e( 'Recent Posts', 'babystore' ); ?></h1>
 
 			<?php
 
@@ -112,7 +112,7 @@ get_header(); ?>
 					<li class="entry-title">
 						<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 						<span class="comments-link">
-							<?php comments_popup_link( __( '<span class="leave-reply">Leave a reply</span>', 'duster' ), __( '<b>1</b> Reply', 'duster' ), __( '<b>%</b> Replies', 'duster' ) ); ?>
+							<?php comments_popup_link( __( '<span class="leave-reply">Leave a reply</span>', 'babystore' ), __( '<b>1</b> Reply', 'babystore' ), __( '<b>%</b> Replies', 'babystore' ) ); ?>
 						</span>
 					</li>
 

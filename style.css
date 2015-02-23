@@ -4,7 +4,7 @@ Theme Name: Babyshop
 Theme URI: http://wordpress.org/extend/themes/babyshop/
 Author: thedragon
 Author URI: http://www.thedragondesigns.com
-Credit to: Automattic @ http://automattic.com/ - Duster theme @ http://wordpress.org/extend/themes/duster/ 
+Credit to: Automattic @ http://automattic.com/ - Duster theme @ http://wordpress.org/extend/themes/babystore/ 
 Description: Duster is a sophisticated theme designed and developed by Automattic, offering a unique page template to turn your blog into a showcase of different kinds of posts – Featured with an image, Asides, Link posts, and more. It also supports customization options like custom backgrounds, headers, menus, and widgets.
 Version: 1.2
 License: GNU General Public License v2 or later
@@ -1354,27 +1354,27 @@ p img,
 
 /* Ephemera Widget */
 section.ephemera ol,
-.widget_duster_ephemera ol {
+.widget_babystore_ephemera ol {
 	list-style: square;
 	margin: 5px 0 0;
 }
 section.ephemera .entry-title,
-.widget_duster_ephemera .entry-title {
+.widget_babystore_ephemera .entry-title {
 	font-size: 15px;
 	font-weight: bold;
 	padding: 0;
 }
 section.ephemera .entry-title a,
-.widget_duster_ephemera .entry-title a {
+.widget_babystore_ephemera .entry-title a {
 	color: #1b8be0;
 }
 section.ephemera .entry-title a:hover,
-.widget_duster_ephemera .entry-title a:hover {
+.widget_babystore_ephemera .entry-title a:hover {
 	color: #ff4b33;
 }
 section.ephemera .entry-title .comments-link a,
-.widget_duster_ephemera .entry-title .comments-link a,
-.widget_duster_ephemera .entry-title .comments-link {
+.widget_babystore_ephemera .entry-title .comments-link a,
+.widget_babystore_ephemera .entry-title .comments-link {
 	color: #666;
 	display: block;
 	font-size: 10px;
@@ -1383,7 +1383,7 @@ section.ephemera .entry-title .comments-link a,
 	text-transform: uppercase;
 }
 section.ephemera .entry-title .comments-link a:hover,
-.widget_duster_ephemera .entry-title .comments-link a:hover {
+.widget_babystore_ephemera .entry-title .comments-link a:hover {
 	color: #1b8be0;
 }
 section.ephemera .entry-title a span {

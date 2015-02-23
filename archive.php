@@ -11,20 +11,20 @@ get_header(); ?>
 		<header class="page-header">
 			<h1 class="page-title">
 				<?php if ( is_day() ) : ?>
-					<?php printf( __( 'Daily Archives: %s', 'duster' ), '<span>' . get_the_date() . '</span>' ); ?>
+					<?php printf( __( 'Daily Archives: %s', 'babystore' ), '<span>' . get_the_date() . '</span>' ); ?>
 				<?php elseif ( is_month() ) : ?>
-					<?php printf( __( 'Monthly Archives: %s', 'duster' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
+					<?php printf( __( 'Monthly Archives: %s', 'babystore' ), '<span>' . get_the_date( 'F Y' ) . '</span>' ); ?>
 				<?php elseif ( is_year() ) : ?>
-					<?php printf( __( 'Yearly Archives: %s', 'duster' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
+					<?php printf( __( 'Yearly Archives: %s', 'babystore' ), '<span>' . get_the_date( 'Y' ) . '</span>' ); ?>
 				<?php else : ?>
-					<?php _e( 'Blog Archives', 'duster' ); ?>
+					<?php _e( 'Blog Archives', 'babystore' ); ?>
 				<?php endif; ?>
 			</h1>
 		</header>
 
 		<?php rewind_posts(); ?>
 
-		<?php duster_content_nav( 'nav-above' ); ?>
+		<?php babystore_content_nav( 'nav-above' ); ?>
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -33,7 +33,7 @@ get_header(); ?>
 
 		<?php endwhile; ?>
 
-		<?php duster_content_nav( 'nav-below' ); ?>
+		<?php babystore_content_nav( 'nav-below' ); ?>
 
 	</div><!-- #content -->
 </section><!-- #primary -->

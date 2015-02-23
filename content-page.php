@@ -11,6 +11,6 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'duster' ), 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'babystore' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->

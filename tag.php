@@ -12,13 +12,13 @@ get_header(); ?>
 
 		<header class="page-header">
 			<h1 class="page-title"><?php
-				printf( __( 'Tag Archives: %s', 'duster' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+				printf( __( 'Tag Archives: %s', 'babystore' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 			?></h1>
 		</header>
 
 		<?php rewind_posts(); ?>
 
-		<?php duster_content_nav( 'nav-above' ); ?>
+		<?php babystore_content_nav( 'nav-above' ); ?>
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -27,7 +27,7 @@ get_header(); ?>
 
 		<?php endwhile; ?>
 
-		<?php duster_content_nav( 'nav-below' ); ?>
+		<?php babystore_content_nav( 'nav-below' ); ?>
 
 	</div><!-- #content -->
 </section><!-- #primary -->

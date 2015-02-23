@@ -10,12 +10,12 @@
 
 		<div class="entry-meta">
 			<?php
-				printf( __( '<span class="sep">Posted on </span><a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>', 'duster' ),
+				printf( __( '<span class="sep">Posted on </span><a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s" pubdate>%3$s</time></a> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s">%6$s</a></span>', 'babystore' ),
 					get_permalink(),
 					get_the_date( 'c' ),
 					get_the_date(),
 					get_author_posts_url( get_the_author_meta( 'ID' ) ),
-					esc_attr( sprintf( __( 'View all posts by %s', 'duster' ), get_the_author() ) ),
+					esc_attr( sprintf( __( 'View all posts by %s', 'babystore' ), get_the_author() ) ),
 					get_the_author()
 				);
 			?>
@@ -24,16 +24,16 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( '<span>Pages:</span>', 'duster' ), 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( '<span>Pages:</span>', 'babystore' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
 		<?php
 			$tag_list = get_the_tag_list( '', ', ' );
 			if ( '' != $tag_list ) {
-				$utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'duster' );
+				$utility_text = __( 'This entry was posted in %1$s and tagged %2$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'babystore' );
 			} else {
-				$utility_text = __( 'This entry was posted in %1$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'duster' );
+				$utility_text = __( 'This entry was posted in %1$s by <a href="%6$s">%5$s</a>. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'babystore' );
 			}
 			printf(
 				$utility_text,
@@ -45,19 +45,19 @@
 				get_author_posts_url( get_the_author_meta( 'ID' ) )
 			);
 		?>
-		<?php edit_post_link( __( 'Edit', 'duster' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'babystore' ), '<span class="edit-link">', '</span>' ); ?>
 
 		<?php if ( get_the_author_meta( 'description' ) ) : // If a user has filled out their description, show a bio on their entries ?>
 		<div id="author-info">
 			<div id="author-avatar">
-				<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'duster_author_bio_avatar_size', 68 ) ); ?>
+				<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'babystore_author_bio_avatar_size', 68 ) ); ?>
 			</div><!-- #author-avatar -->
 			<div id="author-description">
-				<h2><?php echo sprintf( __( 'About %s', 'duster' ), get_the_author() ); ?></h2>
+				<h2><?php echo sprintf( __( 'About %s', 'babystore' ), get_the_author() ); ?></h2>
 				<?php the_author_meta( 'description' ); ?>
 				<div id="author-link">
 					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-						<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'duster' ), get_the_author() ); ?>
+						<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'babystore' ), get_the_author() ); ?>
 					</a>
 				</div><!-- #author-link	-->
 			</div><!-- #author-description -->
